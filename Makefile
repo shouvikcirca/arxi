@@ -1,5 +1,5 @@
 all:
-	sudo cp arxi.py /usr/local/
+	sudo cp arxi.py /usr/local/bin/
 	pip3 install requests
 	pip3 install beautifulsoup4
-	python3 appendtopath.py
+	sudo python3 appendtopath.py
