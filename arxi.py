@@ -6,6 +6,24 @@ import os
 s = sys.argv[1]
 
 
+if s[-3:] == 'pdf':
+    s = s[:-4]
+
+    t = ''
+    i = 0
+    f = 0
+    while i<len(s):
+        if f == 0:
+            if (s[i]+s[i+1]+s[i+2]) == 'pdf':
+                t+='abs'
+                f = 1
+                i+=3
+                continue
+        t+=s[i]
+        i+=1
+
+    s = t
+
 r = requests.get(s)
 soup = BeautifulSoup(r.text, 'html.parser')
 
